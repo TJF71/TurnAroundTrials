@@ -4,6 +4,12 @@ function getValues() {
     // get the text out of the input and assign it to a variable
     let message = document.getElementById('userInput').value;
 
+    // "SANITIZE" by JV
+    //  let cleanInput = input.replaceAll(/[^a-zA-Z0-9]/g,'');  regex replace special char except a to z, A to Z and 0 to 9
+    //  cleanInput = cleanInput.toLowerCase();
+    //  
+
+
     // validate input and make sure its not empty
     if (message.length == 0) {
 
@@ -15,7 +21,7 @@ function getValues() {
             }
         );
 
-        } else {
+    } else {
 
         // pas the user input to reverseMessage function and assign it's return to a variable
         let revMsg = reverseMessage(message);
@@ -23,9 +29,9 @@ function getValues() {
         //send the message adn reverse message to checkForPalindrome
         let palindrome = checkForPalindrome(message, revMsg);
 
-            // give th results to display messare
-        displayResults(message, revMsg, palindrome);  
-        
+        // give th results to display messare
+        displayResults(message, revMsg, palindrome);
+
 
     }
 }
@@ -36,7 +42,7 @@ function reverseMessage(input) {
     // define return
     let output = '';
 
-    for (let i = input.length - 1;  i >=0 ; i--) {
+    for (let i = input.length - 1; i >= 0; i--) {
         output += input[i];
     }
 
@@ -47,7 +53,7 @@ function reverseMessage(input) {
 
 // check to see if the strings match
 
-function checkForPalindrome(msg, revmsg){
+function checkForPalindrome(msg, revmsg) {
     if (msg == revmsg) {
         return true;
     } else {
@@ -56,7 +62,7 @@ function checkForPalindrome(msg, revmsg){
 
 }
 
-function displayResults (msgEntered, revMsg, PalTrueFalse){
+function displayResults(msgEntered, revMsg, PalTrueFalse) {
 
     document.getElementById('msg').textContent = `Your message is ${msgEntered}`;
     document.getElementById('msg').textContent = `Your reversed message is ${revMsg}`;
