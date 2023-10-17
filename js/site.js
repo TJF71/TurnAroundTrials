@@ -8,6 +8,11 @@ function getValues() {
     //  let cleanInput = input.replaceAll(/[^a-zA-Z0-9]/g,'');  regex replace special char except a to z, A to Z and 0 to 9
     //  cleanInput = cleanInput.toLowerCase();
     //  
+    // or
+    // 
+    //    let regex = /[^a-zA-Z0-9]/g;
+    //    let cleanInput = input.replaceAll(regex, '');
+    //
 
 
     // validate input and make sure its not empty
@@ -60,6 +65,16 @@ function checkForPalindrome(msg, revmsg) {
         return false;
     }
 
+    // JV notes
+    // let reversed = reverseMessage(cleanInput); JV
+    // let isPalindrom = reversed == cleanInput; JV  <- returns boolean
+    // 
+    // let results = {
+    // reversedMessage: reversed,
+    // isPalindrome: isPanindrome
+    // };
+    // return results;  <- return object with mulitple values.  Can only return one item from function
+    // so if you want more you can use an object
 }
 
 function displayResults(msgEntered, revMsg, PalTrueFalse) {
@@ -74,6 +89,8 @@ function displayResults(msgEntered, revMsg, PalTrueFalse) {
 
 
     document.getElementById('alert').classList.remove('invisible');
+    // document.getElementById('alert').classList.remove('invisible', 'alert-danger, 'alert-success');  <- could remove all alerts at once
+    // document.getElementById('alert').classList.add( 'alert-danger');  <- add the alert you want
 
 }
 
