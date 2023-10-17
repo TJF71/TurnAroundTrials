@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> APP NAME: By Tom Farrell</title>
+    <title> TurnAroundTrials: By Tom Farrell</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -26,7 +26,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="/img/Logo_Only.svg" height="30" />
-                APP NAME
+                TurnAroundTrials
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -70,16 +70,50 @@
     </nav>
 
     <main class="container py-3">
-        <h1>APP UI GOES HERE</h1>
+        <div class="row row-cols-1 row-cols-md-2">
 
-        <input class="form-control my-3" 
-            placeholder="Enter a message"
-            type="text"
-            style="width: 10rem"
-            name="message"
-            id="message" />
+            <!-- FIRST COLUMN -->
+            <div class="col ">
+                <h1 class="display-5 text-center">TurnAroundTrials</h1>
 
-        <button id="btnSubmit" class="btn btn-primary">Display Message</button>
+                <h2 class="lead text-center border border-2 border-bottom">
+                    A Coding Challenge
+                </h2>
+                <p>
+                    A palindrome checker. This app takes user input and
+                    checks to see if it is the same forward as it is backword.
+                    For example, "radar" is the same whether even if the word is
+                    reversed
+                </p>
+            </div>
+
+            <!-- SECOND COLUMN -->
+            <div class="col">
+                <form action="#">
+                    <label class="form-label fw-bold" for="userInput">Please enter a string to check for a
+                        palindrome</label>
+
+                    <input class="form-control" type="text" name="userInput" placeholder="Enter a Message"
+                        id="userInput">
+
+                    <button class="my-3 btn btn-primary" id="btnSubmit" type="button">Check for Palindrome!</button>
+                </form>
+
+                <div class="alert alert-success mt-3 invisible" id="alert" role="alert">
+                    <h2 class="alert-heading"></h2>
+                    <p id="msg">
+                        <!-- Palindrome response goes here  -->
+                    </p>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+
+
     </main>
 
 
@@ -107,22 +141,22 @@
 
 
 
-<!--Bootstrap JS  -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+    <!--Bootstrap JS  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
-<!-- Sweet Alert -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<script src="/js/site.js"></script>
+    <script src="/js/site.js"></script>
 
-<script>
- // get the button on the page and assign it to variable
-    let button = document.getElementById('btnSubmit');
- // tell the button to run the displayMessage function when clicked
-    button.addEventListener('click', displayMessage);
-</script>
+    <script>
+        // get the button on the page and assign it to variable
+        let button = document.getElementById('btnSubmit');
+        // tell the button to run the displayMessage function when clicked
+        button.addEventListener('click', getValues);
+    </script>
 
 </body>
 
