@@ -32,10 +32,10 @@ function getValues() {
         let revMsg = reverseMessage(message);
 
         //send the message adn reverse message to checkForPalindrome
-        let palindrome = checkForPalindrome(message, revMsg);
+        //let palindrome = checkForPalindrome(message, revMsg);
 
         // give th results to display messare
-        displayResults(message, revMsg, palindrome);
+        displayResults(message, revMsg);
 
 
     }
@@ -58,12 +58,12 @@ function reverseMessage(input) {
 
 // check to see if the strings match
 
-function checkForPalindrome(msg, revmsg) {
-    if (msg == revmsg) {
-        return true;
-    } else {
-        return false;
-    }
+// function checkForPalindrome(msg, revmsg) {
+//     if (msg == revmsg) {
+//         return true;
+//     } else {
+//         return false;
+//     }
 
     // JV notes
     // let reversed = reverseMessage(cleanInput); JV
@@ -75,17 +75,17 @@ function checkForPalindrome(msg, revmsg) {
     // };
     // return results;  <- return object with mulitple values.  Can only return one item from function
     // so if you want more you can use an object
-}
+//}
 
-function displayResults(msgEntered, revMsg, PalTrueFalse) {
+function displayResults(msgEntered, revMsg) {
 
     document.getElementById('msg').textContent = `Your message is ${msgEntered}`;
     document.getElementById('msg').textContent = `Your reversed message is ${revMsg}`;
-    document.getElementById('msg').textContent = `It is ${PalTrueFalse} that your message is a palindrome`;
+    // document.getElementById('msg').textContent = `It is ${PalTrueFalse} that your message is a palindrome`;
 
 
 
-    // document.getElementById('msg').textContent = `Your message in reverse is ${revMsg}`;
+    document.getElementById('msg').textContent = `Your message in reverse is ${revMsg}`;
 
 
     document.getElementById('alert').classList.remove('invisible');
