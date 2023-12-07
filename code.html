@@ -79,26 +79,66 @@
             <div class="col col-12 col-lg-8">
                 <pre class="line-numbers">
                     <code class="language-js">
-function displayMessage() {
-    // get the text out of the input and assign it to a variable
-        let msg = document.getElementById('message').value;
-    
-        Swal.fire(
-        {
-            backdrop: false,
-            title: 'APP NAME',
-            text: msg,  //replace this with that variable
-        }
-        );
-}                
+                        // get the user input to reverse
+                        function getValues() {
+                            // get the text out of the input and assign it to a variable
+                            let message = document.getElementById('userInput').value;
+                      
+                            // validate input and make sure its not empty
+                            if (message.length == 0) {
+                                // send a Swal message back if the input is not valid
+                                Swal.fire(
+                                    {
+                                        backdrop: 'error',
+                                        backdrop: false,
+                                        text: 'Please enter a string to check'   
+                                    }
+                                );
+                        
+                            } else {
+                        
+                                // pass the user input to reverseMessage function 
+                                // and assign it's return to a variable
+                                let revMsg = reverseMessage(message);
+
+                                // give th results to display messare
+                                displayResults(message, revMsg);
+                       
+                            }
+                        }
+                        
+                        // reverse the string
+                        function reverseMessage(input) {
+                        
+                            // define return
+                            let output = '';
+                            
+                            // use a for loop to provide the variable with details
+                            for (let i = input.length - 1; i >= 0; i--) {
+                                output += input[i];
+                            }
+                        
+                            return output;
+                        
+                        }                                              
+                        
+                        function displayResults(msgEntered, revMsg) {
+                        
+                            document.getElementById('msg').textContent = `Your message is ${msgEntered}`;
+                            document.getElementById('msg').textContent = `Your reversed message is ${revMsg}`;                                             
+                        }                
                     </code>
                 </pre>
             </div>
             <div class="col col-12 col-lg-4">
-                <p>The code is structured in one function</p>
+                <br>
+                <p>First we ask the user to input a value.</p>
+                
+                <br><br><br><br><br><br>
                 <p>
                     <code>display message</code> displays a sweetalert
-                    when the button is pressed.
+                    when the button is pressed and if the user has not 
+                    entered a string to check
                 </p>
             </div>
         </div>
@@ -120,8 +160,8 @@ function displayMessage() {
             <div class="col text-center text-lg-end">
                 <a href="https://www.linkedin.com/in/thomas-j-farrell-75195a94/"> <i class="bi bi-linkedin"></i></a>
                 <a href="#"> <i class="bi bi-github"></i></a>
-                <a href="#"> <i class="bi bi-youtube"></i></a>
-                <a href="#"> <i class="bi bi-twitter"></i></a>
+                <!-- <a href="#"> <i class="bi bi-youtube"></i></a>
+                <a href="#"> <i class="bi bi-twitter"></i></a> -->
             </div>
         </div>
     </footer>
